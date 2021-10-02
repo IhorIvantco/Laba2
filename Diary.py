@@ -1,22 +1,24 @@
 while True:
-    text=str(input("Enter text: ")).split()
+    text = str(input("Enter text: ")).split(' ')
     words = []
     agains = False
-    TPS={}
     for i in text:
         for z in words:
             if i == z:
                 agains = True
+
         if agains == True:
-            agains == False
+            agains = False
             continue
         words.append(i)
         agains = False
+        
     words.sort()
     print(words)
 
-    text  = "".join(words)
+    word_let  = "".join(words)
 
-    for char in set(text):
-        count = text.count(char)
-        print('{}-{}'.format(char, count))
+    for char in set(word_let):
+        count = word_let.count(char)
+        print('{} = {}'.format(char, count),end=';  ')
+    print()
